@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev":"nodemon ./backend/index.js",
-    "start": "node /backend/index.js"
+    "start": "node /backend/index.js",
+    "heroku-postbuild": "YARN_CONFIG_PRODUCTION=false yarn install --prefix frintend && yarn run build --frontend"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
