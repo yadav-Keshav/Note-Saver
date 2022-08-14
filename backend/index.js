@@ -13,9 +13,9 @@ dotenv.config({ path: path.join(__dirname, '../.env') });
 const DB_URL = process.env.DB_URL;
 connectDB(DB_URL);
 
-app.get('/', (req, res) => {
-    res.send("API is running");
-})
+// app.get('/', (req, res) => {
+//     res.send("API is running");
+// })
 app.use(express.json())
 app.use('/api/users', userRoutes);
 app.use('/api/notes', noteRoutes);
