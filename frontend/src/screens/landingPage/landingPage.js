@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import './landingPage.css'
-import { useNavigate} from 'react-router-dom';
-import {Link} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
+import { a } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 
 const LandingPage = () => {
@@ -10,43 +10,43 @@ const LandingPage = () => {
     const navigate = useNavigate();
     useEffect(() => {
         if (userInfo) {
-          navigate("/mynotes");
+            navigate("/mynotes");
         }
-      }, [navigate, userInfo]);
+    }, [navigate, userInfo]);
 
 
 
     return (
         <div className="main">
             <div className='container'>
-                    <div className="intro-text">
-                        <div>
-                            <h1 className="title">Welcome to Note Saver</h1>
-                            <p className="subtitle">One Safe place for all your notes.</p>
-                        </div>
-                        <div className="buttonContainer">
+                <div className="intro-text">
+                    <div>
+                        <h1 className="title">Welcome to Note Saver</h1>
+                        <p className="subtitle">One Safe place for all your notes.</p>
+                    </div>
+                    <div className="buttonContainer">
 
 
-                        <Link to="/login">
-                            <button size="lg" className="landingbutton">
+                        <a onClick={()=>navigate("/login")}>
+                            <button className="landingbutton">
                                 Login
                             </button>
-                        </Link>
+                        </a>
 
 
 
-                                <Link to="/register">
-                                <button
-                                    variant="outline-primary"
-                                    size="lg"
-                                    className="landingbutton"
-                                >
-                                    Signup
-                                </button>
-                                </Link>
+                        <a onClick={()=>navigate("/register")}>
+                            <button
+                                variant="outline-primary"
+                                size="lg"
+                                className="landingbutton"
+                            >
+                                Signup
+                            </button>
+                        </a>
 
-                        </div>
                     </div>
+                </div>
             </div>
         </div>
     )

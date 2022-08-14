@@ -29,32 +29,28 @@ function CreateNote() {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        if (!title || !content || !category) return;
+        if (!title || !content || !category)
+            return;
         dispatch(createNoteAction(title, content, category));
-
         resetHandler();
         dispatch({ type: NOTES_CREATE_SUCCESS })
-        // alert("note created")
-        // navigate("/mynotes");
+        navigate("/mynotes");
     };
 
     const showNotesFunction = () => {
         navigate('/mynotes')
     }
-
     useEffect(() => { }, []);
-
     return (
         <MainScreen title="Create a Note">
-            <div style={{ margin: "20px" }}>
-                <button className="mx-2" onClick={showNotesFunction} >
-                    Show All Notes
-                </button>
-            </div>
-            <div>
-                <h1>Create a new Note</h1>
+            <div className="main_box">
+                <div style={{ margin: "20px" }}>
+                    <button className="mx-2" onClick={showNotesFunction} >
+                        Show All Notes
+                    </button>
+                </div>
                 <div>
-                    <form className="main_box">
+                    <form className="createContainer">
                         {error && <ErrorMessage >{error}</ErrorMessage>}
                         <div controlId="title">
                             <label>Title</label>
@@ -92,15 +88,14 @@ function CreateNote() {
                             <button type="submit" onClick={submitHandler}>
                                 Create Note
                             </button>
-                            <button  onClick={resetHandler} >
+                            <button onClick={resetHandler} >
                                 Reset Feilds
                             </button>
                         </div>
                     </form>
-                </div>
-
-                <div className="text-muted">
-                    Creating on - {new Date().toLocaleDateString()}
+                    <div className="text-muted">
+                        Creating on - {new Date().toLocaleDateString()}
+                    </div>
                 </div>
             </div>
         </MainScreen>

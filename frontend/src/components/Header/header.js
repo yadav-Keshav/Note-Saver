@@ -45,8 +45,8 @@ const Header = () => {
                             <div className="link" class="dropdown">
                                 <button class="dropbtn">My Profile</button>
                                 <div class="dropdown-content">
-                                    <Link className="link" href="/update">Update</Link>
-                                    <Link className="link" onClick={logoutHandler}>Logout</Link>
+                                    <a className="link" href="/myprofile">Update</a>
+                                    <button className="link" onClick={logoutHandler}>Logout</button>
                                 </div>
                             </div>
                         </>

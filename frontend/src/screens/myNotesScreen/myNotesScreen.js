@@ -46,7 +46,7 @@ const MyNotes = () => {
             {
                 notes?.reverse().map(note => (
                     <div>
-                        <h2 className='title'>{note.title}</h2>
+                        <h2 >{note.title}</h2>
                         <h3>{note.content}</h3>
                         <ul>
                             <li><button onClick={() => deleteHandler(note._id)}>Delete</button></li>

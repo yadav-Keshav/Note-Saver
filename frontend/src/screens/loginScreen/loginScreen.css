@@ -1,5 +1,37 @@
 .loginContainer {
     display: flex;
     flex-direction: column;
-    margin: 20px;
+    background-color: #fff;
+    width: 350px;
+    margin-top: 20px;
+    margin: auto !important;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 5px 0px 15px 5px #aaaaaa;
   }
+  .loginContainer label{
+      display: block;
+      margin-top: 5px;
+      font-size: 16px;
+  }
+  .loginContainer input{
+    width: 300px;
+    border: 1px solid gray;
+    font-size: 15px;
+    padding: 5px;
+  }
+  .loginContainer button{
+    width: 250x;
+  }
+  .loginContainer input:focus{
+    outline: none;
+}
+.loginContainer button{
+  width: 312px;
+  font-size: 15px;
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  background-color: #4CAF50;
+  color: #fff;
+}

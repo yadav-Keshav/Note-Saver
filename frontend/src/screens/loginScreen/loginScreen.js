@@ -19,9 +19,9 @@ function LoginScreen() {
     const { loading, error, userInfo } = userLogin;
 
     useEffect(() => {
-      if (userInfo) {
-        navigate("/mynotes");
-      }
+        if (userInfo) {
+            navigate("/mynotes");
+        }
     }, [navigate, userInfo]);
 
     const submitHandler = async (e) => {
@@ -34,11 +34,12 @@ function LoginScreen() {
 
     return (
         <MainScreen title="LOGIN">
-
-            {error && <ErrorMessage >Invalid email or password</ErrorMessage>}
-            {loading && <Loading />}
             <div className="loginContainer">
-                <div controlId="formBasicEmail" >
+                <div>
+                    {error && <ErrorMessage >Invalid email or password</ErrorMessage>}
+                    {loading && <Loading />}
+                </div>
+                <div id="formBasicEmail" >
                     <label>Email address</label>
                     <input
                         type="email"
@@ -61,10 +62,8 @@ function LoginScreen() {
                 <button onClick={submitHandler} style={{ marginTop: "20px" }} >
                     Submit
                 </button>
-                <div className="py-3 form_items">
-                    <h3>
-                        New Customer ? <Link className='link' to="/register">Register Here</Link>
-                    </h3>
+                <div>
+                        New Customer ? <Link style={{color:'blue'}} className='link' to="/register">Register Here</Link>
                 </div>
             </div>
         </MainScreen>

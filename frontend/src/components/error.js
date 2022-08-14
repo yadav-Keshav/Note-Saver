@@ -1,7 +1,7 @@
 import React from "react";
 const ErrorMessage = ({ variant = "info", children }) => {
     return (
-        <div>
+        <div style={{color:'red'}}>
             <p>{children}</p>
         </div>
     );
